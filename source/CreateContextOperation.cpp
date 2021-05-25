@@ -1842,9 +1842,9 @@ bool CreateContextOperation::ReadLearningTraces(const vector<File*>& learningTra
 
 			map<TPNode*, TraceVector> partNodeTraceVectorMap = map<TPNode*, TraceVector>();
 
-			foreach_const(vector<Event*>, events, iter) // fill in the proper trace vectors
+			foreach_const(vector<Event*>, events, iterE) // fill in the proper trace vectors
 			{
-				ActualEvent* event = dynamic_cast<ActualEvent*>(*iter);
+				ActualEvent* event = dynamic_cast<ActualEvent*>(*iterE);
 				VERIFY(event != NULL); VERIFY(user == event->GetUser());
 
 				ull tm = event->GetTimestamp();
